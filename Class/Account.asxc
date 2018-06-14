@@ -1,0 +1,9 @@
+public with sharing Account()
+{
+    @AuraEnabled
+    public static List<Account> getAccount()
+    {
+        List<Account> account = [SELECT ID , AccountNumber, Name from Account];
+        return account;
+    }
+}

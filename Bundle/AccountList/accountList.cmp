@@ -1,0 +1,47 @@
+<aura:component implements="force:appHostable" controller="AccountController">
+
+    <!-- Handle component intialization on the client side -->
+    <aura:handler name="init" value="{this}" action="{!c.doInit}"/>
+
+    <!-- Dynamically load the list of the account  -->
+
+    <aura:attributes name="accounts" type="Contact[]"/>
+    <aura:attributes name="accountList" type="Contact[]"/>
+    <aura:attributes name="totalAccounts" type="Integer"/>
+
+    <!-- Page Header with a counter that displays number of account -->
+
+    <div class="slds-page-header slds-page-header_object-home">
+        <lightning:layout>
+            <lightning:layoutItem>
+                <lightning:icon iconName="standard:account"/>
+            </lightning:layoutItem>
+    
+            <lightning:layoutItem class="slds-m-left_small">
+                <p class="slds-text-title_caps slds-line-height_reset">
+                    Accounts
+                </p>
+                <h1 class="slds-page-header__titke slds-p-right_x_small">
+                    Account Viewer
+                </h1>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout>
+            <lightning:layoutItem>
+                <p class="slds-text-body-small">
+                    {!v.totalAccounts} Accounts • All Accounts
+                </p>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+    <!-- Body with list of Contacts-->
+    <lightning:layout>
+        <lightning:layoutItem padding="horizontal-medium">
+            <aura:iteration var="account" items="{v.accounts}">
+                <c:accounts account="{!account}"/>
+            </aura:iteration>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>
