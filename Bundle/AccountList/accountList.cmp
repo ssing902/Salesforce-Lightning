@@ -39,7 +39,14 @@
     <!-- Body with list of Contacts-->
     <lightning:layout>
         <lightning:layoutItem padding="horizontal-medium">
-            <aura:iteration var="account" items="{v.accounts}">
+            
+        <lightning:select aura:id="select" label="All" name="source"
+                          onchange="{!c.handleSelect}" class="slds-m-bottom_medium">
+        <option value="All" text="All"/>
+        </lightning:select>
+        
+        
+        <aura:iteration var="account" items="{v.accounts}">
                 <c:accounts account="{!account}"/>
             </aura:iteration>
         </lightning:layoutItem>
