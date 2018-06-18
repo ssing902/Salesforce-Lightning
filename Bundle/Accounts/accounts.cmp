@@ -5,8 +5,6 @@
             <lightning:button name="details" label="Details" onClick="{!c.goToRecord}"/>
          </aura:set> 
 
-         
-
          <p class="slds-p-horizontal_small">
              {!v.account.Name}
          </p>
