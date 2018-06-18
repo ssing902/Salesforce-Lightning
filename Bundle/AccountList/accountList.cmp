@@ -46,7 +46,7 @@
         </lightning:select>
         
         
-        <aura:iteration var="account" items="{v.accounts}">
+        <aura:iteration var="account" items="{!v.accounts}">
                 <c:accounts account="{!account}"/>
             </aura:iteration>
         </lightning:layoutItem>

@@ -37,6 +37,6 @@
     updateTotal:function(cmp)
     {
         var accounts = cmp.get("v.accounts");
-        cmp.set("v.totalAccount" ,accounts.length);
+        cmp.set("v.totalAccounts" ,accounts.length);
     }
 })
