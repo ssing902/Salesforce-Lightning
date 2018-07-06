@@ -1,7 +1,7 @@
 <aura:component > 
     
     
-    <!-- Arura Handler -->
+    <!-- Aura Handler -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
    <!-- 
     <div class="container">  
@@ -11,6 +11,29 @@
     
     <aura:html tag="div">
     </aura:html>
-  
     
+    <!-- Navigation to other object -->
+    <!-- using navigation events -->
+    <!--
+      1. force:navigateToList
+          Navigates to a list view.
+
+      2. force:navigateToObjectHome
+          Navigates to an object home.
+
+      3. force:navigateToRelatedList
+         Navigates to a related list.
+
+      4. force:navigateToSObject
+        Navigates to a record.
+
+      5.  force:navigateToURL
+        Navigates to a URL
+    -->
+
+    <!--c : navtoRecord-->
+    <aura:component>
+      <aura:attribute name="recordId" type="string"/>
+      <p><a onclick="{!c.handleClick}">link to Rceord</a></p>
+    </aura:component>
 </aura:component>
